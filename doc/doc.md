@@ -1,25 +1,19 @@
 # 1. 添加权限:
 ```java
-<uses-permission android:name="com.android.vending.BILLING" />
-
-<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
 <!-- 基本权限 开始 -->
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 <uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 <uses-permission android:name="com.android.vending.BILLING" />
-
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
-<!-- MYCARD -->
+<!-- MYCARD权限，不使用mycard时不需要添加 -->
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.CAMERA" />
-
 <uses-feature android:name="android.hardware.camera" />
 <uses-feature android:name="android.hardware.camera.autofocus" />
-
 <uses-permission android:name="android.permission.VIBRATE" />
 <uses-permission android:name="android.permission.FLASHLIGHT" />
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -27,19 +21,15 @@
 <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
 <uses-permission android:name="android.permission.READ_LOGS" />
-<!-- MYCARD -->
 
 <uses-permission android:name="android.permission.WAKE_LOCK" />
+<!-- MYCARD -->
 
-<!-- 注意：：：将此处的<YOUR-PACKAGE-NAME>换成你的包名 -->
-<permission android:name="<YOUR-PACKAGE-NAME>.permission.C2D_MESSAGE" android:protectionLevel="signature" />
-<uses-permission android:name="<YOUR-PACKAGE-NAME>.permission.C2D_MESSAGE" />
-<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-<!-- 基本权限 结束 -->
+
 
 ```
 
-# 2. 在application节点添加android:name属性:
+# 2. 在application节点添加android:name属性(不使用mycard支付时不需要添加):
 ```java
 
 android:name="com.seastar.SeastarApplication"
@@ -54,37 +44,43 @@ android:name="com.seastar.SeastarApplication"
     android:name="com.seastar.activity.LoginChannelActivity"
     android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
     android:launchMode="standard"
-    android:screenOrientation="portrait"
+    android:screenOrientation="sensor"
     android:theme="@style/CustomDialog" />
 <activity
     android:name="com.seastar.activity.SeastarLoginActivity"
     android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
     android:launchMode="standard"
-    android:screenOrientation="portrait"
+    android:screenOrientation="sensor"
     android:theme="@style/CustomDialog" />
 <activity
     android:name="com.seastar.activity.SeastarRegistActivity"
     android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
     android:launchMode="standard"
-    android:screenOrientation="portrait"
+    android:screenOrientation="sensor"
     android:theme="@style/CustomDialog" />
 <activity
     android:name="com.seastar.activity.FindPwdActivity"
     android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
     android:launchMode="standard"
-    android:screenOrientation="portrait"
+    android:screenOrientation="sensor"
     android:theme="@style/CustomDialog" />
 <activity
     android:name="com.seastar.activity.AccountListActivity"
     android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
     android:launchMode="standard"
-    android:screenOrientation="portrait"
+    android:screenOrientation="sensor"
     android:theme="@style/CustomDialog" />
 <activity
     android:name="com.seastar.activity.WebViewActivity"
     android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
     android:launchMode="standard"
-    android:screenOrientation="portrait" />
+    android:screenOrientation="sensor" />
+<activity
+    android:name="com.seastar.activity.BindEmailActivity"
+    android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+    android:launchMode="standard"
+    android:screenOrientation="sensor"
+    android:theme="@style/CustomDialog" />
 
 
 <!-- facebook activity -->
@@ -94,7 +90,7 @@ android:name="com.seastar.SeastarApplication"
     android:screenOrientation="portrait"
     android:label="@string/app_name" />
 
-<!-- MYCARD -->
+<!-- MYCARD 不需要使用mycard支付时，不需要添加如下activity -->
 <activity
     android:name="soft_world.mycard.paymentapp.ui.SplashActivity"
     android:screenOrientation="portrait" >
@@ -258,28 +254,25 @@ android:name="com.seastar.SeastarApplication"
     android:theme="@android:style/Theme.Light.NoTitleBar" />
 <!-- MYCARD -->
 
-<!-- appsflyer接收器 -->
+<!-- appsflyer安装追踪 -->
 <receiver android:name="com.appsflyer.MultipleInstallBroadcastReceiver" android:exported="true">
     <intent-filter>
         <action android:name="com.android.vending.INSTALL_REFERRER" />
     </intent-filter>
 </receiver>
-<receiver android:name="com.google.android.gms.gcm.GcmReceiver" android:exported="true">
-      <intent-filter>
-            <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-      </intent-filter>
-</receiver>
-<service android:name="com.appsflyer.InstanceIDListener" android:exported="false">
-      <intent-filter>
-            <action android:name="com.google.android.gms.iid.InstanceID"/>
-      </intent-filter>
+<!-- appsflyer卸载追踪 不使用GCM和firebase message -->
+<service
+    android:name="com.appsflyer.FirebaseInstanceIdListener">
+    <intent-filter>
+        <action
+            android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+    </intent-filter>
 </service>
 
-<!-- gocpa receiver -->
-<receiver android:name="com.gocpa.android.sdk.GocpaPlayMarketTracker" android:exported="true">
-    <intent-filter>
-        <action android:name="com.android.vending.INSTALL_REFERRER" />
-    </intent-filter>
+<!-- GoCPA安装追踪 不使用GoCPA时不需要添加 -->
+<receiver android:name="com.gocpa.android.sdk.GocpaPlayMarketTracker" android:exported="true"> <intent-filter>
+    <action android:name="com.android.vending.INSTALL_REFERRER" />
+</intent-filter>
 </receiver>
 ```
 
@@ -312,25 +305,21 @@ android:name="com.seastar.SeastarApplication"
 <!-- 配置服务器api地址，不要改动 -->
 <meta-data
     android:name="st_server_url"
-    android:value="https://52.77.192.179" />
+    android:value="https://sdk.vrseastar.com" />
 <!-- 配置appsflyer的key -->
 <meta-data
     android:name="appsflyer_key"
     android:value="L4ff7yygMdy6XL88YXjrF" />
-<!-- 配置appsflyer的gcm project id -->
-<meta-data
-    android:name="appsflyer_gcm_project_id"
-    android:value="xxxxxx" />
 
-<!-- 配置gocpa的appid -->
+<!-- 配置gocpa的appid 不使用GoCpA时不需要添加-->
 <meta-data
     android:name="gocpa_app_id"
     android:value="xxxxxx" />
-<!-- 配置gocpa的advertiser_id -->
+<!-- 配置gocpa的advertiser_id 不使用GoCpA时不需要添加 -->
 <meta-data
     android:name="gocpa_advertiser_id"
     android:value="xxxxxx" />
-<!-- 配置gocpa的referral -->
+<!-- 配置gocpa的referral 不使用GoCpA时不需要添加 -->
 <meta-data
     android:name="gocpa_referral"
     android:value="false" />
@@ -340,18 +329,16 @@ android:name="com.seastar.SeastarApplication"
 * 将seastarsdk.aar放入libs.
 * build.gradle内dependencies添加:
 ```java
-compile(name: 'facebook-android-sdk-4.17.0', ext: 'aar')
-compile 'com.squareup.okhttp3:okhttp:3.4.1'
-compile 'com.google.android.gms:play-services-base:9.6.0'
-compile 'com.google.android.gms:play-services-basement:9.6.0'
-compile 'com.google.android.gms:play-services-games:9.6.0'
+compile 'com.google.android.gms:play-services-base:9.6.1'
+compile 'com.google.android.gms:play-services-basement:9.6.1'
+compile 'com.google.android.gms:play-services-games:9.6.1'
+
 compile 'com.appsflyer:af-android-sdk:4+@aar'
-```
-* build.gradle内添加插件:
-```java
+compile 'com.facebook.android:facebook-android-sdk:4.+'
+compile 'com.squareup.okhttp3:okhttp:3.4.1'
 
-apply plugin: 'com.google.gms.google-services'
-
+compile 'com.fasterxml.jackson.core:jackson-core:2.8.7'
+compile 'com.fasterxml.jackson.core:jackson-databind:2.8.7'
 ```
 
 # 6. 添加运行时方法:
@@ -378,6 +365,12 @@ protected void onDestroy() {
     super.onDestroy();
 
     SeastarSdk.current.onDestory();
+}
+
+@Override
+protected void onResume() {
+    super.onResume();
+    SeastarSdk.current.onResume();
 }
 
 ```
