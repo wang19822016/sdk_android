@@ -1,0 +1,105 @@
+<resources>
+    <string name="app_name">SeastarSdk</string>
+
+    <string name="btn_login_text">登入</string>
+    <string name="btn_findpwd_text">找回密碼</string>
+    <string name="btn_regist_text">註冊帳號</string>
+    <string name="btn_email_bind_text">綁定信箱</string>
+    <string name="btn_email_bind_cancel_text">跳過</string>
+
+    <string name="textview_other_login">切換帳號</string>
+    <string name="textview_kefu">若遺忘帳號密碼，請聯絡客服信箱：streetball.seastar@gmail.com</string>
+    <string name="textview_login_channel_title">選擇登入方式</string>
+    <string name="textview_login_channel_guest">遊客</string>
+    <string name="textview_login_channel_google">Google</string>
+    <string name="textview_login_channel_facebook">Facebook</string>
+    <string name="textview_login_channel_seastar">海星帳戶</string>
+    <string name="textview_seastar_login_findpwd">找回密碼</string>
+    <string name="textview_seastar_login_regist">註冊帳號</string>
+    <string name="textview_bind_email">只能為綁定過信箱的帳號找回忘記的密碼，強烈建議您綁定信箱</string>
+
+
+    <string name="hint_username">請輸入帳號(6至16位)</string>
+    <string name="hint_password">請輸入密碼(8至16位)</string>
+    <string name="hint_email">請輸入信箱（可選）</string>
+    <string name="hint_email1">請輸入信箱</string>
+
+
+    <string name="tip_username_err">請輸入字母開頭，由數字和字母組成的6至16位帳號</string>
+    <string name="tip_password_err">請輸入由數字和字母組成的8至16位密碼</string>
+    <string name="tip_email_err">請輸入正確的信箱</string>
+    <string name="tip_findpwd_success">找回成功，請到綁定信箱查看密碼。</string>
+    <string name="tip_findpwd_fail">找回失敗，請聯系客服。</string>
+    <string name="tip_welcome">，欢迎回来！</string>
+    <string name="tip_pay_success">支付成功, 將會在1至3分鐘到賬。有問題請聯系 <b>streetball.seastar@gamil.com</b></string>
+    <string name="tip_login_err">登入失敗，請稍後重試</string>
+    <string name="tip_regist_fail">註冊失敗，請稍後再試。</string>
+    <!-- zh-cn -->
+
+
+    <string name="title_main_login">登入</string>
+    <string name="title_change_password">修改密碼</string>
+    <string name="title_pay">選擇充值方式</string>
+    <string name="text_back">返回</string>
+    <string name="text_ok">確定</string>
+    <string name="text_bind_google">綁定</string>
+    <string name="text_bind_facebook">綁定</string>
+    <string name="text_unbind_google">解綁</string>
+    <string name="text_unbind_facebook">解綁</string>
+    <string name="text_pay_mycard">MyCard</string>
+    <string name="text_pay_google">Google</string>
+    <string name="text_save">帳號密碼</string>
+    <string name="hint_inputold">輸入原密碼(8至16位)</string>
+    <string name="hint_inputnew">輸入新密碼(8至16位)</string>
+    <string name="save_password">保存到相冊並登入</string>
+    <string name="tip_save_pwd">图片保存成功</string>
+    <string name="tip_login_ok">登入成功</string>
+    <string name="tip_pay_ok">儲值成功</string>
+    <string name="tip_pay_err">儲值失敗，請稍後重試</string>
+    <string name="tip_google_game_fail">请检查是否已经登入google play games</string>
+    <string name="tip_password_noequal">兩次新密碼不相同</string>
+    <string name="tip_changepwd_success">修改密碼成功</string>
+    <string name="tip_changepwd_fail">修改密碼失敗，請稍後再試。</string>
+    <string name="tip_bind_success">綁定成功</string>
+    <string name="tip_bind_fail">綁定失敗</string>
+    <string name="tip_unbind_success">解綁成功</string>
+    <string name="tip_unbind_fail">解綁失敗</string>
+    <string name="tip_network_err">網絡連接失敗，請重試</string>
+    <string name="tip_login_no_user">帳號不存在，請註冊</string>
+    <string name="tip_login_pwd_err">密碼錯誤，請重試</string>
+    <string name="tip_login_deny">賬號凍結，請更換帳號</string>
+    <string name="title_guest">試玩</string>
+    <string name="title_ok">完成</string>
+    <string name="nowpass">原密碼:</string>
+    <string name="newpass">新密碼:</string>
+    <string name="reinputnew">重複輸入新密碼</string>
+    <string name="change_pass">修改密碼</string>
+    <string name="title_man">帳號中心</string>
+    <string name="sub_title_userman">seastar帳號管理</string>
+    <string name="sub_title_logout">取消</string>
+    <string name="pay_chongcard">充值卡</string>
+    <string name="title_guests">試玩帳號</string>
+    <string name="regist_name">帳號：</string>
+    <string name="regist_pass">密碼：</string>
+    <string name="regist_email">信箱：</string>
+    <string name="user_delete">刪除</string>
+    <string name="logout">取消</string>
+    <string name="user_forgetpass">忘記密碼，請聯繫客服</string>
+    <string name="user_other">用其他帳號登錄</string>
+    <string name="user_findpass">點擊這裡找回</string>
+    <string name="close">關閉</string>
+    <string name="user_bind_account">您現在正使用試玩帳號登錄,\n請綁定帳號以免丟失</string>
+    <string name="pay_web">網頁支付</string>
+    <string name="use_protocol">使用條款</string>
+    <string name="rightbtn">右按鈕</string>
+    <string name="choosewrite">選擇填入</string>
+    <string name="writelimit">8-16個字母或數字</string>
+    <string name="payuser">充值帳號：</string>
+    <string name="payproduct">訂購商品</string>
+    <string name="payprice">充值金額</string>
+    <string name="paygame">充值遊戲</string>
+    <string name="paything">訂購商品:</string>
+    <string name="findpasschoose">選擇填入 找回密碼</string>
+    <string name="findpass">找回密碼</string>
+
+</resources>

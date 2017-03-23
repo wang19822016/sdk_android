@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="445dp"
+    android:layout_height="228dp"
+    android:background="@drawable/dialog_background"
+    android:orientation="horizontal">
+
+    <include layout="@layout/head" />
+
+    <LinearLayout
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="18dp"
+        android:orientation="vertical">
+
+        <!-- 用户名 -->
+        <AutoCompleteTextView
+            android:id="@+id/seastar_login_username"
+            android:textSize="16sp"
+            android:textColor="#636363"
+            android:background="@drawable/box_highlight"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:hint="@string/hint_username"
+            android:maxLength="@integer/length_username"
+            android:completionThreshold="1"
+            android:nextFocusDown="@+id/seastar_login_password"
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:imeOptions="actionDone"/>
+
+        <!-- 密码 -->
+        <EditText
+            android:id="@+id/seastar_login_password"
+            android:textSize="16sp"
+            android:textColor="#636363"
+            android:background="@drawable/box_highlight"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="9dp"
+            android:hint="@string/hint_password"
+            android:maxLength="@integer/length_password"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textCursorDrawable="@drawable/color_cursor" />
+
+
+        <!-- 登录 -->
+        <Button
+            android:id="@+id/seastar_login_button"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/button_selector"
+            android:text="@string/btn_login_text" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:gravity="right">
+
+            <!-- 找回密码 -->
+
+            <TextView
+                android:id="@+id/seastar_login_findpwd"
+                android:textSize="16sp"
+                android:textColor="@color/textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="@string/textview_seastar_login_findpwd"
+                android:layout_marginRight="10dp"/>
+
+            <TextView
+                android:id="@+id/seastar_login_regist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="@string/textview_seastar_login_regist"
+                android:textColor="@color/textview"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,102 @@
+<resources>
+    <string name="app_name">SeastarSdk</string>
+
+    <string name="btn_login_text">Sign in</string>
+    <string name="btn_findpwd_text">Recover</string>
+    <string name="btn_regist_text">Register</string>
+    <string name="btn_email_bind_text">connect email</string>
+    <string name="btn_email_bind_cancel_text">skip</string>
+
+    <string name="textview_other_login">Use other account</string>
+    <string name="textview_kefu">If you forgot your password，please send email to streetball.seastar@gmail.com</string>
+    <string name="textview_login_channel_title">Sign in with</string>
+    <string name="textview_login_channel_guest">Guest</string>
+    <string name="textview_login_channel_google">Google</string>
+    <string name="textview_login_channel_facebook">Facebook</string>
+    <string name="textview_login_channel_seastar">Seastar Account</string>
+    <string name="textview_seastar_login_findpwd">Forgot Password?</string>
+    <string name="textview_seastar_login_regist">Register</string>
+    <string name="textview_bind_email">Only can get back the password for the player who connect email. Please connect your email.</string>
+
+    <string name="hint_username"> Enter username(6 to 10)</string>
+    <string name="hint_password"> Enter password(8 to 16)</string>
+    <string name="hint_email"> Enter email address</string>
+    <string name="hint_email1"> Enter email address</string>
+
+    <string name="tip_username_err">Please enter the username with 6 to 16 letters and numbers.The beginning must be letter.</string>
+    <string name="tip_password_err">Please enter the password with 8 to 16 letters and numbers</string>
+    <string name="tip_email_err">Please enter the correct email address</string>
+    <string name="tip_findpwd_success">Success，plesase check password from the mail box</string>
+    <string name="tip_findpwd_fail">Fail，please contact customer service</string>
+    <string name="tip_welcome">, Welcome!</string>
+    <string name="tip_pay_success">Success, you will get the purchases in 1-3 min. If have questions, please contact <b>streetball.seastar@gamil.com</b></string>
+    <string name="tip_login_err">Sign in fail, please try again later</string>
+    <string name="tip_regist_fail">Register fail, please try again later</string>
+    <!-- zh-cn -->
+
+
+    <string name="title_main_login">Sign in</string>
+    <string name="title_change_password">Change password</string>
+    <string name="title_pay">Payment</string>
+    <string name="text_back">Return</string>
+    <string name="text_ok">OK</string>
+    <string name="text_bind_google">Connect</string>
+    <string name="text_bind_facebook">Connect</string>
+    <string name="text_unbind_google">Unconnect</string>
+    <string name="text_unbind_facebook">Unconnect</string>
+    <string name="text_pay_mycard">MyCard</string>
+    <string name="text_pay_google">Google</string>
+    <string name="text_save">Account password</string>
+    <string name="hint_inputold"> Enter current password(8 to 16)</string>
+    <string name="hint_inputnew"> Enter new password(8 to 16)</string>
+    <string name="save_password">Save to picture and login</string>
+    <string name="tip_save_pwd">Save success</string>
+    <string name="tip_login_ok">Sign in success</string>
+    <string name="tip_pay_ok">Payment success</string>
+    <string name="tip_pay_err">Payment fail, please try again</string>
+    <string name="tip_google_game_fail">Please check have you already logged in google play games</string>
+    <string name="tip_password_noequal">New passwords must be consistent</string>
+    <string name="tip_changepwd_success">Change success</string>
+    <string name="tip_changepwd_fail">Change fail，please try again later。</string>
+    <string name="tip_bind_success">Connect success</string>
+    <string name="tip_bind_fail">Connect fail</string>
+    <string name="tip_unbind_success">Unconnect sucess</string>
+    <string name="tip_unbind_fail">Unconnect fail</string>
+    <string name="tip_network_err">Network error，please try again later</string>
+    <string name="tip_login_no_user">This username is not exist，please Register</string>
+    <string name="tip_login_pwd_err">Wrong password，please try again</string>
+    <string name="tip_login_deny">This account is locked，please change account</string>
+    <string name="title_guest">Guest</string>
+    <string name="title_ok">OK</string>
+    <string name="nowpass">Current password:</string>
+    <string name="newpass">New password:</string>
+    <string name="reinputnew">Re-type new password</string>
+    <string name="change_pass">Change password</string>
+    <string name="title_man">Account center</string>
+    <string name="sub_title_userman">Seastar account setting</string>
+    <string name="sub_title_logout">Cancel</string>
+    <string name="pay_chongcard">Recharge card</string>
+    <string name="title_guests">Guest account</string>
+    <string name="regist_name">Username：</string>
+    <string name="regist_pass">Password：</string>
+    <string name="regist_email">Email：</string>
+    <string name="user_delete">Delete</string>
+    <string name="logout">Cancel</string>
+    <string name="user_forgetpass">Forget password，please contact customer service</string>
+    <string name="user_other">Use other account to log in</string>
+    <string name="user_findpass">Click here to find password</string>
+    <string name="close">Close</string>
+    <string name="user_bind_account">Sign in with guest account\n connect to protect your account</string>
+    <string name="pay_web">Web payment</string>
+    <string name="use_protocol">Terms of use</string>
+    <string name="rightbtn">Right button</string>
+    <string name="choosewrite">Optional</string>
+    <string name="writelimit">8-16 letters or numbers</string>
+    <string name="payuser">Charge account：</string>
+    <string name="payproduct">Order item</string>
+    <string name="payprice">Price</string>
+    <string name="paygame">Order game</string>
+    <string name="paything">Order item:</string>
+    <string name="findpasschoose">Optional find password</string>
+    <string name="findpass">find password</string>
+</resources>

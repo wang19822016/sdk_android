@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="445dp"
+    android:layout_height="228dp"
+    android:background="@drawable/dialog_background"
+    android:orientation="vertical">
+
+    <!-- 顶部 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+            <Button
+                android:id="@+id/head_landscape_back"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_alignParentLeft="true"
+                android:paddingLeft="10dp"
+                android:background="@drawable/back" />
+
+            <ImageView
+                android:layout_width="122dp"
+                android:layout_height="39dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/logo_head"/>
+        </RelativeLayout>
+
+
+
+        <ImageView
+            android:layout_width="380dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/gray"/>
+
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/textview_login_channel_title"></TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <!-- 游客 -->
+        <LinearLayout
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/login_channel_guest"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:layout_width="60dp"
+                android:layout_height="61dp"
+                android:background="@drawable/guest_big" />
+
+        </LinearLayout>
+        <!-- 账号 -->
+        <LinearLayout
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/login_channel_seastar"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:layout_width="60dp"
+                android:layout_height="61dp"
+                android:background="@drawable/seastar_big" />
+
+        </LinearLayout>
+
+
+        <!-- facebook -->
+
+        <LinearLayout
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/login_channel_facebook"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:layout_width="60dp"
+                android:layout_height="61dp"
+                android:background="@drawable/facebook_big" />
+
+        </LinearLayout>
+        <!--google -->
+
+        <LinearLayout
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/login_channel_google"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:layout_width="60dp"
+                android:layout_height="61dp"
+                android:background="@drawable/google_big" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/login_channel_guest_txt"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/textview_login_channel_guest"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/login_channel_seastar_txt"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/textview_login_channel_seastar"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/login_channel_facebook_txt"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/textview_login_channel_facebook"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/login_channel_google_txt"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/textview_login_channel_google"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

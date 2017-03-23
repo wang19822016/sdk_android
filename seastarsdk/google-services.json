@@ -1,0 +1,51 @@
+{
+  "project_info": {
+    "project_number": "719725480497",
+    "project_id": "mydemo-54428"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:719725480497:android:c2aaadfc9460c4bf",
+        "android_client_info": {
+          "package_name": "com.seastar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "719725480497-pk82egi61ufpkivutrebngufp7ahmlge.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.seastar",
+            "certificate_hash": "DA39A3EE5E6B4B0D3255BFEF95601890AFD80709"
+          }
+        },
+        {
+          "client_id": "719725480497-gsirsu3tsclqip0m84hcd2l14gir7k0r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCl-VdUQ8HRPdLStXJbpCehCkc7gkRkH4M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-86790483-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="334dp"
+    android:layout_height="268dp"
+    android:background="@drawable/dialog_background"
+    android:orientation="vertical">
+
+
+    <!-- 返回按钮 -->
+    <include layout="@layout/head" />
+
+
+    <!-- 用户名 -->
+    <EditText
+        android:id="@+id/regist_username"
+        android:textSize="16sp"
+        android:textColor="#636363"
+        android:background="@drawable/box_highlight"
+        android:layout_width="296dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        android:hint="@string/hint_username"
+        android:maxLength="@integer/length_username"
+        android:nextFocusDown="@+id/edit_reg_password"
+        android:maxLines="1"
+        android:textCursorDrawable="@drawable/color_cursor" />
+
+
+    <!-- 密码 -->
+
+    <EditText
+        android:id="@+id/regist_password"
+        android:textSize="16sp"
+        android:textColor="#636363"
+        android:background="@drawable/box_highlight"
+        android:layout_width="296dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:hint="@string/hint_password"
+        android:maxLength="@integer/length_password"
+        android:nextFocusDown="@+id/edit_reg_email"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:textCursorDrawable="@drawable/color_cursor" />
+
+    <!-- 密码 -->
+
+    <EditText
+        android:id="@+id/regist_email"
+        android:textSize="16sp"
+        android:textColor="#636363"
+        android:background="@drawable/box_highlight"
+        android:layout_width="296dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:hint="@string/hint_email"
+        android:maxLength="@integer/length_email"
+        android:maxLines="1"
+        android:textCursorDrawable="@drawable/color_cursor" />
+
+
+    <!-- 註冊 -->
+
+    <Button
+        android:id="@+id/regist_button"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_width="296dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:padding="0dp"
+        android:background="@drawable/button_selector"
+        android:text="@string/btn_regist_text" />
+
+</LinearLayout>

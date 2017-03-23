@@ -1,0 +1,24 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <!-- 自定义Dialog -->
+    <style name="CustomDialog" parent="@android:style/Theme.Dialog">
+
+        <!-- windowFrame框为无 -->
+        <item name="android:windowFrame">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 去掉覆盖层 -->
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@color/transparent</item>
+        <!-- 设置背景颜色 -->
+        <item name="android:background">@color/transparent</item>
+    </style>
+
+
+</resources>

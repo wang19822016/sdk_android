@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="334dp"
+    android:layout_height="226dp"
+    android:background="@drawable/dialog_background"
+    android:orientation="vertical">
+
+    <!-- 邮箱 -->
+    <EditText
+        android:id="@+id/bind_email_text"
+        android:textSize="16sp"
+        android:textColor="#636363"
+        android:background="@drawable/box_highlight"
+        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="42dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="@string/hint_email1"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:textCursorDrawable="@drawable/color_cursor" />
+
+    <!-- 绑定 -->
+    <Button
+        android:id="@+id/bind_email_button"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="0dp"
+        android:background="@drawable/button_selector"
+        android:text="@string/btn_email_bind_text" />
+
+    <Button
+        android:id="@+id/bind_email_cancel_button"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="0dp"
+        android:background="@drawable/button_selector"
+        android:text="@string/btn_email_bind_cancel_text" />
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/gray"/>
+
+
+    <TextView
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/textview_bind_email" />
+
+</LinearLayout>

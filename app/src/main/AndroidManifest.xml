@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.ss.yaomengen">
+
+    <uses-permission android:name="com.android.vending.BILLING" />
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- 基本权限 开始 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+
+    <!-- MYCARD -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <!-- MYCARD -->
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- 注意：：：将此处的<YOUR-PACKAGE-NAME>换成你的包名 -->
+    <!--
+    <permission android:name="com.ss.yaomengen.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+    <uses-permission android:name="com.ss.yaomengen.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />-->
+    <!-- 基本权限 结束 -->
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:name="com.seastar.SeastarApplication"
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+        <activity
+            android:name="com.seastar.seastarsdk_android.MainActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"></action>
+                <category android:name="android.intent.category.LAUNCHER"></category>
+            </intent-filter>
+        </activity>
+        <!-- 基础Activity, screenOrientation可以根据需要进行调整, 支持横屏和竖屏 -->
+        <activity
+            android:name="com.seastar.activity.LoginChannelActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:launchMode="standard"
+            android:screenOrientation="sensor"
+            android:theme="@style/CustomDialog" />
+        <activity
+            android:name="com.seastar.activity.SeastarLoginActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:launchMode="standard"
+            android:screenOrientation="sensor"
+            android:theme="@style/CustomDialog" />
+        <activity
+            android:name="com.seastar.activity.SeastarRegistActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:launchMode="standard"
+            android:screenOrientation="sensor"
+            android:theme="@style/CustomDialog" />
+        <activity
+            android:name="com.seastar.activity.FindPwdActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:launchMode="standard"
+            android:screenOrientation="sensor"
+            android:theme="@style/CustomDialog" />
+        <activity
+            android:name="com.seastar.activity.AccountListActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:launchMode="standard"
+            android:screenOrientation="sensor"
+            android:theme="@style/CustomDialog" />
+        <activity
+            android:name="com.seastar.activity.WebViewActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:launchMode="standard"
+            android:screenOrientation="sensor" />
+        <activity
+            android:name="com.seastar.activity.BindEmailActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:launchMode="standard"
+            android:screenOrientation="sensor"
+            android:theme="@style/CustomDialog" />
+
+
+        <!-- facebook activity -->
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name" />
+
+
+        <!-- MYCARD -->
+        <activity
+            android:name="soft_world.mycard.paymentapp.ui.SplashActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="soft_world.mycard.paymentapp.ui.MainActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="soft_world.mycard.paymentapp.ui.TrainActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- zxing -->
+        <activity
+            android:name="com.google.zxing.CaptureActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="tw.com.mycard.paymentsdk.PSDKActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="soft_world.mycard.paymentapp.ui.billing.BillingWebViewActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+        <!-- 異康 -->
+        <activity
+            android:name="soft_world.mycard.paymentapp.Ecom.ATMMenuActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.xmobilepay.xpaymentlibs.XCardTypeForm"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.xmobilepay.xpaymentlibs.XPayCardPassWordForm"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.xmobilepay.xpaymentlibs.XSmallPayCardPassWordForm"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.xmobilepay.xpaymentlibs.PaymentResultForm"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.xmobilepay.xpaymentlibs.PaymentErrResultForm"
+            android:screenOrientation="portrait" >
+        </activity>
+        <!-- 遠傳電信 -->
+        <activity
+            android:name="com.fet.iap.activity.FetLoginActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+
+        <!-- 中華電信 -->
+        <activity android:name="com.cht.iap.api.ChtRegMainActivity" />
+        <activity android:name="com.cht.iap.api.ChtPhoneNumPayConfirmActivity" />
+        <activity android:name="com.cht.iap.api.ChtRegEInvoiceInfo" />
+        <activity android:name="com.cht.iap.api.ChtRegVerifyOTP" />
+        <activity android:name="com.cht.iap.api.ChtRegHNDataTabActivity" />
+        <activity android:name="com.cht.iap.api.ChtRegHNAccountActivity" />
+        <activity android:name="com.cht.iap.api.ChtRegMobileAuth" />
+        <activity android:name="com.cht.iap.api.ChtRegMobileHNData" />
+        <activity android:name="com.cht.iap.api.ChtTransactionAuth" />
+        <activity android:name="com.cht.iap.api.ChtRegVerifyMessage" />
+        <!-- 中國信託 -->
+        <activity
+            android:name="com.softmobile.ui.PayPageActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait" />
+        <!-- 首信易 -->
+        <activity
+            android:name="com.payeasenet.token.lib.ui.TokenPayTypeCheckUI"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.payeasenet.token.lib.ui.CardTypeCheckUI"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.payeasenet.token.lib.ui.TokenCreateUI"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.payeasenet.token.lib.ui.TokenCreateResultUI"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.payeasenet.token.lib.ui.TokenPayUI"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.payeasenet.token.lib.ui.PEPayRelUI"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.payeasenet.token.lib.ui.TokenIntroductionUI"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.payeasenet.token.lib.ui.TokenUnBindedUI"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.payeasenet.token.lib.ui.MoreAboutUI"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.payeasenet.token.lib.ui.PEUpopInfoUI"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.payeasenet.token.lib.ui.PEUpopPayUI"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.payeasenet.token.lib.ui.PEIvrPayUI"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.payeasenet.token.lib.ui.PEQuickPayUI"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.payeasenet.token.lib.ui.PEUpmpPayUI"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.payeasenet.token.lib.ui.PEVisaPayUI"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.payeasenet.token.lib.ui.PEVisaInfoUI"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.payeasenet.token.lib.ui.PEVisaBillInfoUI"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.payeasenet.token.lib.ui.PEDebitBillInfoUI"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.payeasenet.token.lib.ui.PEQuickInfoUI"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <activity
+            android:name="com.payeasenet.token.lib.ui.PEUpmpInfoUI"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar" />
+        <!-- MYCARD -->
+
+
+        <!-- appsflyer安装追踪 -->
+        <receiver android:name="com.appsflyer.MultipleInstallBroadcastReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+        <!-- appsflyer卸载追踪 不使用GCM和firebase message -->
+        <service
+            android:name="com.appsflyer.FirebaseInstanceIdListener">
+            <intent-filter>
+                <action
+                    android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        
+        <!-- GoCAP安装追踪 -->
+        <receiver android:name="com.gocpa.android.sdk.GocpaPlayMarketTracker" android:exported="true"> <intent-filter>
+            <action android:name="com.android.vending.INSTALL_REFERRER" />
+        </intent-filter>
+        </receiver>
+
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.gms.games.APP_ID"
+            android:value="@string/google_game_id" />
+
+        <!-- 开关配置begin -->
+        <meta-data
+            android:name="st_app_id"
+            android:value="3" />
+        <meta-data
+            android:name="st_app_key"
+            android:value="4b9c56a0d77ac65ca3a7b015ec33c5a5" />
+        <meta-data
+            android:name="st_server_url"
+            android:value="https://sdk.vrseastar.com" />
+        <meta-data
+            android:name="appsflyer_key"
+            android:value="id8cz6KeZGqLSk2eemLZDk" />
+        <meta-data
+            android:name="gocpa_app_id"
+            android:value="dasdf" />
+        <meta-data
+            android:name="gocpa_advertiser_id"
+            android:value="123" />
+        <meta-data
+            android:name="gocpa_referral"
+            android:value="false" />
+    </application>
+
+</manifest>

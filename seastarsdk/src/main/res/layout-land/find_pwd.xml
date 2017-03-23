@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="445dp"
+    android:layout_height="228dp"
+    android:background="@drawable/dialog_background"
+    android:orientation="horizontal">
+
+    <include layout="@layout/head" />
+
+    <LinearLayout
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="18dp"
+        android:layout_marginTop="28dp"
+        android:orientation="vertical">
+
+        <!-- 用户名输入框 -->
+        <AutoCompleteTextView
+            android:id="@+id/findpwd_username"
+            android:textSize="16sp"
+            android:textColor="#636363"
+            android:background="@drawable/box_highlight"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:hint="@string/hint_username"
+            android:maxLength="@integer/length_username"
+            android:maxLines="1"
+            android:completionThreshold="1"
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:imeOptions="actionDone" />
+
+        <!-- 找回密码 -->
+        <Button
+            android:id="@+id/findpwd_button"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="16dp"
+            android:padding="0dp"
+            android:background="@drawable/button_selector"
+            android:text="@string/btn_findpwd_text" />
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/gray"/>
+
+
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/textview_kefu" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
