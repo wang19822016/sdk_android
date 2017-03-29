@@ -68,6 +68,8 @@ public class SeastarSdk {
 
         initAppsFlyer();
         initGoCpa();
+
+        UserModel.clearExpire(activity);
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {

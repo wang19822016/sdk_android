@@ -41,6 +41,30 @@ public class UserModel {
         }
     }
 
+    public static void clearExpire(Context context) {
+        ArrayList<UserModel> models = getAll(context);
+        ArrayList<UserModel> notExpire = new ArrayList<>();
+        UserModel cur = getCurrentUser(context);
+
+        // 提前7天过期
+        long testTime = System.currentTimeMillis() / 1000 + 7 * 24 * 60 * 60;
+
+        for (UserModel model : models) {
+            if (testTime <= model.expired()) {
+                notExpire.add(model);
+            } else {
+                if (cur != null) {
+                    if (model.getUserId() == cur.getUserId()) {
+                        removeCurrentUser(context);
+                    }
+                }
+            }
+        }
+
+        if (models.size() != notExpire.size())
+            saveAll(context, notExpire);
+    }
+
     public static UserModel get(Context context, long userId) {
         ArrayList<UserModel> models = getAll(context);
 
@@ -211,6 +235,20 @@ public class UserModel {
             try {
                 JsonNode root = mapper.readTree(Utility.base64UrlDecode(strArray[1]));
                 return root.path("loginType").asInt();
+            } catch (Exception e) {
+
+            }
+        }
+
+        return 0;
+    }
+
+    public long expired() {
+        String[] strArray = token.split("\\.");
+        if (strArray.length == 3) {
+            try {
+                JsonNode root = mapper.readTree(Utility.base64UrlDecode(strArray[1]));
+                return root.path("exp").asLong();
             } catch (Exception e) {
 
             }

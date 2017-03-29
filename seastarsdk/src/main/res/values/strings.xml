@@ -34,6 +34,7 @@
     <string name="tip_pay_success">支付成功, 將會在1至3分鐘到賬。有問題請聯系 <b>streetball.seastar@gamil.com</b></string>
     <string name="tip_login_err">登入失敗，請稍後重試</string>
     <string name="tip_regist_fail">註冊失敗，請稍後再試。</string>
+    <string name="tip_google_game_fail">請檢查是否已經登入google play games</string>
     <!-- zh-cn -->
 
 
@@ -56,7 +57,7 @@
     <string name="tip_login_ok">登入成功</string>
     <string name="tip_pay_ok">儲值成功</string>
     <string name="tip_pay_err">儲值失敗，請稍後重試</string>
-    <string name="tip_google_game_fail">请检查是否已经登入google play games</string>
+
     <string name="tip_password_noequal">兩次新密碼不相同</string>
     <string name="tip_changepwd_success">修改密碼成功</string>
     <string name="tip_changepwd_fail">修改密碼失敗，請稍後再試。</string>

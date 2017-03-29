@@ -4,11 +4,11 @@ android {
     compileSdkVersion 24
     buildToolsVersion '25.0.0'
     defaultConfig {
-        applicationId "com.ss.jjsgtw.gp"
+        applicationId "com.seastar.gpplay.streetball"
         minSdkVersion 15
         targetSdkVersion 15
-        versionCode 20170302
-        versionName "00.35.00"
+        versionCode 11
+        versionName "1.1.5"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }

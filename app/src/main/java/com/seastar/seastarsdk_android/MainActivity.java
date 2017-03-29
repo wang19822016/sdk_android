@@ -107,7 +107,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
             //SeastarSdk.current.unlockGoogleAchievement("CgkIhPKr4OwHEAIQAQ");
             //SeastarSdk.current.incrementGoogleAchievement("CgkIhPKr4OwHEAIQAQ", 5);
 
-            SeastarSdk.current.purchase("jjsggp7002", "role1", "server1", "extra", new OnPurchaseFinishListener() {
+            SeastarSdk.current.purchase("sh.gp.iap100", "role1", "server1", "extra", new OnPurchaseFinishListener() {
                 @Override
                 public void onFinished(final boolean bool, final String order) {
                     MainActivity.this.runOnUiThread(new Runnable() {
