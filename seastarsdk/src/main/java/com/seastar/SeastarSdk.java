@@ -385,7 +385,7 @@ public class SeastarSdk {
         if (type != Config.TYPE_GUEST && type != Config.TYPE_ACCOUNT) return;
 
         int n = new Random().nextInt(100);
-        if (n < 80) return;
+        if (n < 60) return;
 
         AuthHelper.getInstance().hasEmail(new OnActionFinishListener() {
             @Override

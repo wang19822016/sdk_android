@@ -101,7 +101,8 @@ public class GooglePayHelper {
                             googlePurchaseModel.save(context);
                             clearPurchaseModel();
 
-                            onPurchaseFinishListener.onFinished(false, "");
+                            if (onPurchaseFinishListener != null)
+                                onPurchaseFinishListener.onFinished(false, "");
                         }
 
                         @Override
@@ -118,9 +119,11 @@ public class GooglePayHelper {
                                 } catch (IOException e) {
                                     e.printStackTrace();
                                 }
-                                onPurchaseFinishListener.onFinished(true, order);
+                                if (onPurchaseFinishListener != null)
+                                    onPurchaseFinishListener.onFinished(true, order);
                             } else {
-                                onPurchaseFinishListener.onFinished(false, "");
+                                if (onPurchaseFinishListener != null)
+                                    onPurchaseFinishListener.onFinished(false, "");
                             }
                         }
                     });
@@ -146,7 +149,8 @@ public class GooglePayHelper {
                      */
                     Log.d("Seastar", "Billing Error: " + errorCode + error);
                     clearPurchaseModel();
-                    onPurchaseFinishListener.onFinished(false, "");
+                    if (onPurchaseFinishListener != null)
+                        onPurchaseFinishListener.onFinished(false, "");
                 }
             });
         }
