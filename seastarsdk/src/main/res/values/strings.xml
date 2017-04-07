@@ -31,7 +31,7 @@
     <string name="tip_findpwd_success">找回成功，請到綁定信箱查看密碼。</string>
     <string name="tip_findpwd_fail">找回失敗，請聯系客服。</string>
     <string name="tip_welcome">，欢迎回来！</string>
-    <string name="tip_pay_success">支付成功, 將會在1至3分鐘到賬。有問題請聯系 <b>streetball.seastar@gamil.com</b></string>
+    <string name="tip_pay_success">支付成功, 將會在1至3分鐘到賬。有問題請聯系 <b>streetball.seastar@gmail.com</b></string>
     <string name="tip_login_err">登入失敗，請稍後重試</string>
     <string name="tip_regist_fail">註冊失敗，請稍後再試。</string>
     <string name="tip_google_game_fail">請檢查是否已經登入google play games</string>

@@ -15,6 +15,7 @@ import com.gocpa.android.sdk.GocpaUtil;
 import com.seastar.activity.WebViewActivity;
 import com.seastar.config.Config;
 import com.seastar.helper.AuthHelper;
+import com.seastar.helper.BossHelper;
 import com.seastar.helper.FacebookHelper;
 import com.seastar.helper.GoogleApiClientHelper;
 import com.seastar.helper.GooglePayHelper;
@@ -63,6 +64,7 @@ public class SeastarSdk {
         FacebookHelper.getInstance().init(activity.getApplicationContext());
         MyCardPayHelper.getInstance().init(activity.getApplicationContext());
         AuthHelper.getInstance().init(activity.getApplicationContext());
+        BossHelper.getInstance().init(activity);
 
         GoogleApiClientHelper.getInstance().connect();
 
@@ -126,6 +128,8 @@ public class SeastarSdk {
             showLoginToast(model.getLoginType(), model.getUsername());
 
             showBindEmail(model.getLoginType());
+
+            BossHelper.getInstance().postLogin(model.getUserId());
         } else {
             ListenerMgr.getInstance().setLoginFinishListener(new OnLoginFinishListener() {
                 @Override
@@ -205,6 +209,10 @@ public class SeastarSdk {
             ActivityMgr.getInstance().showLoginChannelBack(true);
             ActivityMgr.getInstance().navigateToAccountList(activity);
         }
+    }
+
+    public void showFacebookSocialDialog(String bindUrl, String mainPageUrl, String shareUrl, String shareImageUrl, String shareTitle, String shareDescription) {
+        ActivityMgr.getInstance().navigateToFacebookSocialActivity(activity, bindUrl, mainPageUrl, shareUrl, shareImageUrl, shareTitle, shareDescription);
     }
 
     public void shareFb(String imageUri, String caption, final OnActionFinishListener listener) {
@@ -347,7 +355,9 @@ public class SeastarSdk {
 
             if (!appModel.getAppsflyerKey().isEmpty()) {
                 initedAppsflyer = true;
+                AppsFlyerLib.getInstance().setCustomerUserId(appModel.getAppId() + "");
                 AppsFlyerLib.getInstance().startTracking(activity.getApplication(), appModel.getAppsflyerKey());
+                BossHelper.getInstance().appsFlyerUID = AppsFlyerLib.getInstance().getAppsFlyerUID(activity);
             }
         } catch (Exception ex) {
             ex.printStackTrace();

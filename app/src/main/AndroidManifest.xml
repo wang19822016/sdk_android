@@ -99,13 +99,19 @@
             android:launchMode="standard"
             android:screenOrientation="sensor"
             android:theme="@style/CustomDialog" />
+        <activity
+            android:name="com.seastar.activity.FacebookSocialActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:launchMode="standard"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"/>
 
 
         <!-- facebook activity -->
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-            android:screenOrientation="portrait"
+            android:screenOrientation="sensor"
             android:label="@string/app_name" />
 
 

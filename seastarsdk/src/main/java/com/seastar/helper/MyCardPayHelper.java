@@ -157,6 +157,7 @@ public class MyCardPayHelper {
                                     } catch (IOException ex) {
                                         ex.printStackTrace();
                                     }
+
                                 } else {
                                     curListener.onFinished(false, "");
                                 }

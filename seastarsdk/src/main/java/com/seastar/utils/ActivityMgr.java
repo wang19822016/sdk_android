@@ -6,6 +6,7 @@ import android.content.Intent;
 
 import com.seastar.activity.AccountListActivity;
 import com.seastar.activity.BindEmailActivity;
+import com.seastar.activity.FacebookSocialActivity;
 import com.seastar.activity.FindPwdActivity;
 import com.seastar.activity.LoginChannelActivity;
 import com.seastar.activity.SeastarLoginActivity;
@@ -98,6 +99,20 @@ public class ActivityMgr {
 
     public void navigateToBindEmail(Activity activity) {
         Intent intent = new Intent(activity, BindEmailActivity.class);
+        activity.startActivity(intent);
+    }
+
+    public void navigateToFacebookSocialActivity(Activity activity, String bindUrl, String mainPageUrl, String shareUrl, String shareImageUrl, String shareTitle, String shareDescription) {
+        Intent intent = new Intent(activity, FacebookSocialActivity.class);
+        intent.putExtra("bindUrl", bindUrl);
+        intent.putExtra("mainPageUrl", mainPageUrl);
+        intent.putExtra("shareUrl", shareUrl);
+        intent.putExtra("shareImageUrl", shareImageUrl);
+        intent.putExtra("shareTitle", shareTitle);
+        intent.putExtra("shareDescription", shareDescription);
+        intent.putExtra("likeUrl", "http://www.vrseastar.com");
+        intent.putExtra("inviteTitle", "邀请");
+        intent.putExtra("inviteMessage", "快來玩街機三國");
         activity.startActivity(intent);
     }
 }

@@ -27,6 +27,8 @@ public class AuthHelper {
     private NetworkHelper networkHelper = new NetworkHelper();
     private AppModel appModel;
 
+    private boolean isDidRegist = false;
+
     public static AuthHelper getInstance() {
         return instance;
     }
@@ -56,6 +58,7 @@ public class AuthHelper {
         Map<String, String> headers = new HashMap<>();
         headers.put("Authorization", "Basic " + Utility.b64encode(username + ":" + password));
 
+        isDidRegist = true;
         networkHelper.post(appModel.getServerUrl() + "/api/user", headers, postBody, new NetworkListener() {
             @Override
             public void onFailure() {
@@ -68,6 +71,7 @@ public class AuthHelper {
                     listener.onFinished(true);
                 } else {
                     listener.onFinished(false);
+                    isDidRegist = false;
                 }
             }
         });
@@ -110,6 +114,13 @@ public class AuthHelper {
                     UserModel userModel = new UserModel(access_token);
                     userModel.save(context, true);
                     listener.onFinished(true);
+
+                    if (isDidRegist) {
+                        BossHelper.getInstance().postReigst(userModel.getUserId());
+                        isDidRegist = false;
+                    }
+                    BossHelper.getInstance().postLogin(userModel.getUserId());
+
                 } else {
                     listener.onFinished(false);
                 }
@@ -255,4 +266,33 @@ public class AuthHelper {
         });
     }
 
+    /*
+    public void sendUserLog(String token) {
+        try {
+            ObjectNode root = mapper.createObjectNode();
+            root.put("appId", appModel.getAppId());
+            root.put("deviceid", Utility.getDeviceId(context));
+            root.put("androidid", Utility.getAndroidId(context));
+            root.put("board", Utility.getBoard());
+            root.put("device", Utility.getDevice());
+            root.put("brand", Utility.getBrand());
+            root.put("manufacturer", Utility.getManufacturer());
+            root.put("model", Utility.getModel());
+            root.put("product", Utility.getProduct());
+            root.put("systemversion", Utility.getSystemVersion());
+            root.put("network", Utility.getNetworkType(context));
+            String body = mapper.writeValueAsString(root);
+
+            Map<String, String> headers = new HashMap<>();
+            headers.put("Authorization", "Bearer " + token);
+            networkHelper.post(appModel.getServerUrl() + "/api/user/log", headers, body, new NetworkListener() {
+                @Override
+                public void onFailure() {}
+
+                @Override
+                public void onSuccess(int code, String body) {}});
+        } catch (Exception e) {
+
+        }
+    }*/
 }

@@ -13,6 +13,7 @@ import android.widget.ListPopupWindow;
 import android.widget.Toast;
 
 import com.seastar.SeastarSdk;
+import com.seastar.activity.FacebookSocialActivity;
 import com.seastar.listener.OnLoginFinishListener;
 import com.seastar.listener.OnPurchaseFinishListener;
 import com.ss.yaomengen.R;
@@ -66,7 +67,9 @@ public class MainActivity extends Activity implements View.OnClickListener{
     public void onClick(View v) {
         if (v.getId() == R.id.btn_login )
         {
+            SeastarSdk.current.showFacebookSocialDialog("https://www.baidu.com", "https://www.baidu.com", "https://www.baidu.com", "https://www.baidu.com", "分享", "分享");
 
+            /*
             new Thread(new Runnable() {
                 @Override
                 public void run() {
@@ -85,7 +88,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 }
             }).start();
 
-
+    */
 
             //SeastarSdk.current.trackLevelAchieved(1, 100);
             //SeastarSdk.current.trackPurchase(100, "card", "sku1", "USD");

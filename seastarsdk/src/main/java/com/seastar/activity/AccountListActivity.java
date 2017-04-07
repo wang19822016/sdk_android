@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.seastar.R;
 import com.seastar.config.Config;
+import com.seastar.helper.BossHelper;
 import com.seastar.listener.ListenerMgr;
 import com.seastar.model.UserModel;
 import com.seastar.utils.ActivityMgr;
@@ -107,9 +108,10 @@ public class AccountListActivity extends BaseActivity implements View.OnClickLis
 
                 // 登录成功
                 ListenerMgr.getInstance().getLoginFinishListener().onFinished(true,
-                        adapter.getItem(spinner.getSelectedItemPosition()).getUserId() + "",
-                        adapter.getItem(spinner.getSelectedItemPosition()).getToken());
+                        userModel.getUserId() + "",
+                        userModel.getToken());
 
+                BossHelper.getInstance().postLogin(userModel.getUserId());
             }
         }
     }

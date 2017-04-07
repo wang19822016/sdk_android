@@ -29,7 +29,7 @@
     <string name="tip_findpwd_success">Success，plesase check password from the mail box</string>
     <string name="tip_findpwd_fail">Fail，please contact customer service</string>
     <string name="tip_welcome">, Welcome!</string>
-    <string name="tip_pay_success">Success, you will get the purchases in 1-3 min. If have questions, please contact <b>streetball.seastar@gamil.com</b></string>
+    <string name="tip_pay_success">Success, you will get the purchases in 1-3 min. If have questions, please contact <b>streetball.seastar@gmail.com</b></string>
     <string name="tip_login_err">Sign in fail, please try again later</string>
     <string name="tip_regist_fail">Register fail, please try again later</string>
     <string name="tip_google_game_fail">Please check have you already logged in google play games</string>
