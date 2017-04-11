@@ -122,7 +122,8 @@ public class GooglePayHelper {
                                 if (onPurchaseFinishListener != null)
                                     onPurchaseFinishListener.onFinished(true, order);
 
-                                BossHelper.getInstance().postFee(googlePurchaseModel.userId, googlePurchaseModel.price + "");
+                                BossHelper.getInstance().price = googlePurchaseModel.price + "";
+                                BossHelper.getInstance().postFee();
                             } else {
                                 if (onPurchaseFinishListener != null)
                                     onPurchaseFinishListener.onFinished(false, "");

@@ -116,10 +116,11 @@ public class AuthHelper {
                     listener.onFinished(true);
 
                     if (isDidRegist) {
-                        BossHelper.getInstance().postReigst(userModel.getUserId());
+                        BossHelper.getInstance().userId = userModel.getUserId();
+                        BossHelper.getInstance().postReigst();
                         isDidRegist = false;
                     }
-                    BossHelper.getInstance().postLogin(userModel.getUserId());
+                    BossHelper.getInstance().postLogin();
 
                 } else {
                     listener.onFinished(false);

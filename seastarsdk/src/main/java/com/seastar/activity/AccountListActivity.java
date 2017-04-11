@@ -111,7 +111,8 @@ public class AccountListActivity extends BaseActivity implements View.OnClickLis
                         userModel.getUserId() + "",
                         userModel.getToken());
 
-                BossHelper.getInstance().postLogin(userModel.getUserId());
+                BossHelper.getInstance().userId = userModel.getUserId();
+                BossHelper.getInstance().postLogin();
             }
         }
     }

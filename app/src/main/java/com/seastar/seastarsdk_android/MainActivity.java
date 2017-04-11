@@ -55,6 +55,18 @@ public class MainActivity extends Activity implements View.OnClickListener{
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        SeastarSdk.current.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        SeastarSdk.current.onPause();
+    }
+
+    @Override
     protected void onStart() {
         super.onStart();
     }

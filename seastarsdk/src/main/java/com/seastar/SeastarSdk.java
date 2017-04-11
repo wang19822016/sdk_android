@@ -108,10 +108,11 @@ public class SeastarSdk {
 
     public void onResume() {
         FacebookHelper.getInstance().onResume(activity);
+        BossHelper.getInstance().activeOnline();
     }
 
     public void onPause() {
-
+        BossHelper.getInstance().deactiveOnline();
     }
 
     public void onDestory() {
@@ -129,7 +130,8 @@ public class SeastarSdk {
 
             showBindEmail(model.getLoginType());
 
-            BossHelper.getInstance().postLogin(model.getUserId());
+            BossHelper.getInstance().userId = model.getUserId();
+            BossHelper.getInstance().postLogin();
         } else {
             ListenerMgr.getInstance().setLoginFinishListener(new OnLoginFinishListener() {
                 @Override

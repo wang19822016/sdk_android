@@ -9,6 +9,8 @@ import com.seastar.listener.NetworkListener;
 import com.seastar.model.AppModel;
 
 import java.util.HashMap;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Created by osx on 17/4/6.
@@ -22,6 +24,10 @@ public class BossHelper {
 
     private ObjectMapper mapper = new ObjectMapper();
     private AppModel appModel;
+    private Timer timer = new Timer();
+
+    public long userId = 0;
+    public String price = "0";
 
     public static BossHelper getInstance() {
         return instance;
@@ -31,7 +37,7 @@ public class BossHelper {
         appModel = new AppModel(context);
     }
 
-    public void postReigst(long userId) {
+    public void postReigst() {
         ObjectNode root = mapper.createObjectNode();
         root.put("appId", appModel.getAppId());
         root.put("api", "user/register");
@@ -58,7 +64,7 @@ public class BossHelper {
     }
 
 
-    public void postLogin(long userId) {
+    public void postLogin() {
         ObjectNode root = mapper.createObjectNode();
         root.put("appId", appModel.getAppId());
         root.put("api", "user/login");
@@ -83,7 +89,7 @@ public class BossHelper {
         }
     }
 
-    public void postFee(long userId, String price) {
+    public void postFee() {
         ObjectNode root = mapper.createObjectNode();
         root.put("appId", appModel.getAppId());
         root.put("api", "user/pay");
@@ -107,5 +113,42 @@ public class BossHelper {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void activeOnline() {
+        TimerTask timerTask = new TimerTask() {
+            @Override
+            public void run() {
+                ObjectNode root = mapper.createObjectNode();
+                root.put("appId", appModel.getAppId());
+                root.put("api", "user/online");
+                root.put("userId", userId);
+                root.put("clientTime", System.currentTimeMillis() / 1000);
+
+                try {
+                    String body = mapper.writeValueAsString(root);
+                    networkHelper.post("http://report.vrseastar.com/user/online", new HashMap<String, String>(), body, new NetworkListener() {
+                        @Override
+                        public void onFailure() {
+
+                        }
+
+                        @Override
+                        public void onSuccess(int code, String body) {
+                            Log.d("Seastar", "boss, online, " + code);
+                        }
+                    });
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+
+        timer = new Timer();
+        timer.schedule(timerTask, 20, 3 * 60 * 1000);
+    }
+
+    public void deactiveOnline() {
+        timer.cancel();
     }
 }
