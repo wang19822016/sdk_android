@@ -9,6 +9,7 @@ public class ListenerMgr {
     private static ListenerMgr instance = new ListenerMgr();
     private OnLoginFinishListener loginFinishListener;
     private OnPurchaseFinishListener purchaseFinishListener;
+    private OnActionFinishListener sharedFinishListener;
 
     public static ListenerMgr getInstance() {
         return instance;
@@ -28,5 +29,13 @@ public class ListenerMgr {
 
     public void setPurchaseFinishListener(OnPurchaseFinishListener purchaseFinishListener) {
         this.purchaseFinishListener = purchaseFinishListener;
+    }
+
+    public void setSharedFinishListener(OnActionFinishListener sharedFinishListener) {
+        this.sharedFinishListener = sharedFinishListener;
+    }
+
+    public OnActionFinishListener getSharedFinishListener() {
+        return sharedFinishListener;
     }
 }

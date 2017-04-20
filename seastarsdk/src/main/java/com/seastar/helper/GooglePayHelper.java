@@ -123,6 +123,7 @@ public class GooglePayHelper {
                                     onPurchaseFinishListener.onFinished(true, order);
 
                                 BossHelper.getInstance().price = googlePurchaseModel.price + "";
+                                BossHelper.getInstance().sku = googlePurchaseModel.sku;
                                 BossHelper.getInstance().postFee();
                             } else {
                                 if (onPurchaseFinishListener != null)

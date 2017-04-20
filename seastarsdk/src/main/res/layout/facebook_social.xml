@@ -177,7 +177,7 @@
                 android:gravity="center"
                 android:textColor="@color/black"
                 android:textSize="9sp"
-                android:text="首次分享，好康等妳來拿！"/>
+                android:text="首次分享，好康等你來拿！"/>
         </LinearLayout>
 
         <TextView
@@ -279,7 +279,7 @@
                 android:layout_centerVertical="true"
                 android:textSize="15sp"
                 android:textColor="@color/black"
-                android:text="好友已經進入遊戲了?\n發送下面的鏈接給他，填寫幾條信息即可與妳綁定"/>
+                android:text="好友已經進入遊戲了?\n發送下面的鏈接給他，填寫幾條信息即可與你綁定"/>
 
             <TextView
                 android:id="@+id/facebook_social_bind_url"
@@ -288,6 +288,10 @@
                 android:layout_marginTop="15dp"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
+                android:enabled="true"
+                android:textIsSelectable="true"
+                android:focusable="true"
+                android:longClickable="true"
                 android:textSize="15sp"
                 android:textColor="#169BD5"
                 android:text="綁定URL"/>

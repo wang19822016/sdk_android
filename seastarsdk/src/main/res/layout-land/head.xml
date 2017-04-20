@@ -13,7 +13,7 @@
 
     <ImageView
         android:layout_centerVertical="true"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="23dp"
         android:layout_width="97dp"
         android:layout_height="142dp"
         android:src="@drawable/logo" />

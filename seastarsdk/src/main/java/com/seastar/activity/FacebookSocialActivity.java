@@ -34,12 +34,14 @@ import com.facebook.Profile;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.ProfilePictureView;
+import com.facebook.share.Sharer;
 import com.facebook.share.model.GameRequestContent;
 import com.facebook.share.model.ShareLinkContent;
 import com.facebook.share.widget.GameRequestDialog;
 import com.facebook.share.widget.LikeView;
 import com.facebook.share.widget.ShareButton;
 import com.seastar.R;
+import com.seastar.listener.ListenerMgr;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -251,6 +253,31 @@ public class FacebookSocialActivity extends BaseActivity {
 
         ShareButton shareButton = (ShareButton)findViewById(R.id.facebook_social_share);
         shareButton.setShareContent(content);
+        shareButton.registerCallback(callbackManager, new FacebookCallback<Sharer.Result>() {
+            @Override
+            public void onSuccess(Sharer.Result result) {
+                Log.d("Seastar", "share success, postid" + result.getPostId());
+                if (ListenerMgr.getInstance().getSharedFinishListener() != null) {
+                    ListenerMgr.getInstance().getSharedFinishListener().onFinished(true);
+                }
+            }
+
+            @Override
+            public void onCancel() {
+                Log.d("Seastar", "share cancel");
+                if (ListenerMgr.getInstance().getSharedFinishListener() != null) {
+                    ListenerMgr.getInstance().getSharedFinishListener().onFinished(false);
+                }
+            }
+
+            @Override
+            public void onError(FacebookException e) {
+                Log.d("Seastar", "share error, " + e.getMessage());
+                if (ListenerMgr.getInstance().getSharedFinishListener() != null) {
+                    ListenerMgr.getInstance().getSharedFinishListener().onFinished(false);
+                }
+            }
+        });
     }
 
     private void initLike() {
@@ -407,11 +434,18 @@ public class FacebookSocialActivity extends BaseActivity {
     }
 
     private void inviteFacebookFriends(List<String> recipients) {
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < recipients.size(); i++) {
+            builder.append(recipients.get(i));
+            builder.append(",");
+        }
+        String str = builder.substring(0, builder.length() - 1);
         GameRequestDialog dialog = new GameRequestDialog(this);
         GameRequestContent content = new GameRequestContent.Builder()
                 .setMessage(inviteMessage)
                 .setTitle(inviteTitle)
-                .setRecipients(recipients)
+                .setTo(str)
+                //.setRecipients(recipients)
                 //.setActionType(GameRequestContent.ActionType.SEND)
                 //.setObjectId(UUID.randomUUID().toString())
                 .build();

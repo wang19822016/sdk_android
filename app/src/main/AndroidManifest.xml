@@ -316,10 +316,10 @@
         <!-- 开关配置begin -->
         <meta-data
             android:name="st_app_id"
-            android:value="2" />
+            android:value="3" />
         <meta-data
             android:name="st_app_key"
-            android:value="8b8b0faf0ed942419a503774da9faae8" />
+            android:value="4b9c56a0d77ac65ca3a7b015ec33c5a5" />
         <meta-data
             android:name="st_server_url"
             android:value="https://sdk.vrseastar.com" />

@@ -16,7 +16,7 @@
     <string name="textview_login_channel_seastar">海星帳戶</string>
     <string name="textview_seastar_login_findpwd">找回密碼</string>
     <string name="textview_seastar_login_regist">註冊帳號</string>
-    <string name="textview_bind_email">只能為綁定過信箱的帳號找回忘記的密碼，強烈建議您綁定信箱</string>
+    <string name="textview_bind_email">只能為綁定過信箱的帳號找回密碼，強烈建議您綁定信箱</string>
 
 
     <string name="hint_username">請輸入帳號(6至16位)</string>
@@ -26,11 +26,11 @@
 
 
     <string name="tip_username_err">請輸入字母開頭，由數字和字母組成的6至16位帳號</string>
-    <string name="tip_password_err">請輸入由數字和字母組成的8至16位密碼</string>
+    <string name="tip_password_err">請輸入數字和字母組成的8至16位密碼</string>
     <string name="tip_email_err">請輸入正確的信箱</string>
     <string name="tip_findpwd_success">找回成功，請到綁定信箱查看密碼。</string>
     <string name="tip_findpwd_fail">找回失敗，請聯系客服。</string>
-    <string name="tip_welcome">，欢迎回来！</string>
+    <string name="tip_welcome">，歡迎回来！</string>
     <string name="tip_pay_success">支付成功, 將會在1至3分鐘到賬。有問題請聯系 <b>streetball.seastar@gmail.com</b></string>
     <string name="tip_login_err">登入失敗，請稍後重試</string>
     <string name="tip_regist_fail">註冊失敗，請稍後再試。</string>
@@ -95,10 +95,10 @@
     <string name="rightbtn">右按鈕</string>
     <string name="choosewrite">選擇填入</string>
     <string name="writelimit">8-16個字母或數字</string>
-    <string name="payuser">充值帳號：</string>
+    <string name="payuser">儲值帳號：</string>
     <string name="payproduct">訂購商品</string>
-    <string name="payprice">充值金額</string>
-    <string name="paygame">充值遊戲</string>
+    <string name="payprice">儲值金額</string>
+    <string name="paygame">儲值遊戲</string>
     <string name="paything">訂購商品:</string>
     <string name="findpasschoose">選擇填入 找回密碼</string>
     <string name="findpass">找回密碼</string>

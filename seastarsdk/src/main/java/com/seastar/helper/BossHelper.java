@@ -28,6 +28,7 @@ public class BossHelper {
 
     public long userId = 0;
     public String price = "0";
+    public String sku = "";
 
     public static BossHelper getInstance() {
         return instance;
@@ -95,6 +96,7 @@ public class BossHelper {
         root.put("api", "user/pay");
         root.put("userId", userId);
         root.put("payMoney", price);
+        root.put("goodsId", sku);
         root.put("clientTime", System.currentTimeMillis() / 1000);
 
         try {

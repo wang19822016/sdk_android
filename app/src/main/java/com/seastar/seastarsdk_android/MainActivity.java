@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.seastar.SeastarSdk;
 import com.seastar.activity.FacebookSocialActivity;
+import com.seastar.listener.OnActionFinishListener;
 import com.seastar.listener.OnLoginFinishListener;
 import com.seastar.listener.OnPurchaseFinishListener;
 import com.ss.yaomengen.R;
@@ -79,7 +80,13 @@ public class MainActivity extends Activity implements View.OnClickListener{
     public void onClick(View v) {
         if (v.getId() == R.id.btn_login )
         {
-            SeastarSdk.current.showFacebookSocialDialog("https://www.baidu.com", "https://www.baidu.com", "https://www.baidu.com", "https://www.baidu.com", "分享", "分享");
+            SeastarSdk.current.showFacebookSocialDialog("https://www.baidu.com", "https://www.baidu.com", "https://www.baidu.com", "https://www.baidu.com", "分享", "分享", new OnActionFinishListener() {
+                @Override
+                public void onFinished(boolean success) {
+
+                }
+            });
+
 
             /*
             new Thread(new Runnable() {
@@ -91,6 +98,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
                             MainActivity.this.runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
+                                    SeastarSdk.current.updateGoogleScoreOnLeaderboard("CgkIhPKr4OwHEAIQcw", 5);
                                     Toast.makeText(MainActivity.this, "login: " + bool + " " + userId, Toast.LENGTH_SHORT).show();
                                 }
                             });
@@ -99,14 +107,15 @@ public class MainActivity extends Activity implements View.OnClickListener{
                     });
                 }
             }).start();
+            */
 
-    */
 
             //SeastarSdk.current.trackLevelAchieved(1, 100);
             //SeastarSdk.current.trackPurchase(100, "card", "sku1", "USD");
         }
         else if(v.getId() == R.id.btn_change)
         {
+            //SeastarSdk.current.showGoogleLeaderboard();
             SeastarSdk.current.switchAccount(new OnLoginFinishListener() {
                 @Override
                 public void onFinished(final boolean bool, final String userId, String session) {

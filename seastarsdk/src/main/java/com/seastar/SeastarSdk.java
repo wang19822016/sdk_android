@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.anjlab.android.iab.v3.SkuDetails;
@@ -213,7 +214,8 @@ public class SeastarSdk {
         }
     }
 
-    public void showFacebookSocialDialog(String bindUrl, String mainPageUrl, String shareUrl, String shareImageUrl, String shareTitle, String shareDescription) {
+    public void showFacebookSocialDialog(String bindUrl, String mainPageUrl, String shareUrl, String shareImageUrl, String shareTitle, String shareDescription, OnActionFinishListener listener) {
+        ListenerMgr.getInstance().setSharedFinishListener(listener);
         ActivityMgr.getInstance().navigateToFacebookSocialActivity(activity, bindUrl, mainPageUrl, shareUrl, shareImageUrl, shareTitle, shareDescription);
     }
 
