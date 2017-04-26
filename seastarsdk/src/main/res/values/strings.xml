@@ -33,7 +33,7 @@
     <string name="tip_welcome">，歡迎回来！</string>
     <string name="tip_pay_success">支付成功, 將會在1至3分鐘到賬。有問題請聯系 <b>streetball.seastar@gmail.com</b></string>
     <string name="tip_login_err">登入失敗，請稍後重試</string>
-    <string name="tip_regist_fail">註冊失敗，請稍後再試。</string>
+    <string name="tip_regist_fail">帳號已被註冊，請重新輸入</string>
     <string name="tip_google_game_fail">請檢查是否已經登入google play games</string>
     <!-- zh-cn -->
 
