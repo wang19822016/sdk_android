@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -80,35 +81,18 @@ public class MainActivity extends Activity implements View.OnClickListener{
     public void onClick(View v) {
         if (v.getId() == R.id.btn_login )
         {
-            SeastarSdk.current.showFacebookSocialDialog("https://www.baidu.com", "https://www.baidu.com", "https://www.baidu.com", "https://www.baidu.com", "分享", "分享", new OnActionFinishListener() {
+            SeastarSdk.current.login(new OnLoginFinishListener() {
                 @Override
-                public void onFinished(boolean success) {
+                public void onFinished(final boolean bool, final String userId, String session) {
+                    MainActivity.this.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(MainActivity.this, "login: " + bool + " " + userId, Toast.LENGTH_SHORT).show();
+                        }
+                    });
 
                 }
             });
-
-
-            /*
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    SeastarSdk.current.login(new OnLoginFinishListener() {
-                        @Override
-                        public void onFinished(final boolean bool, final String userId, String session) {
-                            MainActivity.this.runOnUiThread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    SeastarSdk.current.updateGoogleScoreOnLeaderboard("CgkIhPKr4OwHEAIQcw", 5);
-                                    Toast.makeText(MainActivity.this, "login: " + bool + " " + userId, Toast.LENGTH_SHORT).show();
-                                }
-                            });
-
-                        }
-                    });
-                }
-            }).start();
-            */
-
 
             //SeastarSdk.current.trackLevelAchieved(1, 100);
             //SeastarSdk.current.trackPurchase(100, "card", "sku1", "USD");
@@ -131,7 +115,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
             //SeastarSdk.current.unlockGoogleAchievement("CgkIhPKr4OwHEAIQAQ");
             //SeastarSdk.current.incrementGoogleAchievement("CgkIhPKr4OwHEAIQAQ", 5);
 
-            SeastarSdk.current.purchase("sh.gp.iap100", "role1", "server1", "extra", new OnPurchaseFinishListener() {
+            SeastarSdk.current.purchase("ss.xyjhtw.app.001", "role1", "server1", "extra", new OnPurchaseFinishListener() {
                 @Override
                 public void onFinished(final boolean bool, final String order) {
                     MainActivity.this.runOnUiThread(new Runnable() {

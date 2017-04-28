@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.webkit.JavascriptInterface;
 import android.webkit.JsResult;
 import android.webkit.WebChromeClient;
@@ -137,7 +138,7 @@ public class WebViewActivity extends Activity {
 
         Map<String, String> additionalHttpHeaders = new HashMap<>();
         additionalHttpHeaders.put("Authorization", "Bearer " + userModel.getToken());
-        webView.loadUrl(appModel.getServerUrl() + "/pay?sku=" + Utility.toUrlEncode(productId) + "&customer=" + Utility.toUrlEncode(roleId) +
+        webView.loadUrl(appModel.getServerUrl() + "/api/pay?sku=" + Utility.toUrlEncode(productId) + "&customer=" + Utility.toUrlEncode(roleId) +
                     "&server=" + Utility.toUrlEncode(serverId) + "&extra=" + Utility.toUrlEncode(extra), additionalHttpHeaders);
     }
     /*
@@ -168,12 +169,13 @@ public class WebViewActivity extends Activity {
 
     // 通过window.jsObj.cancel使用
     @JavascriptInterface
-    public void cancel(final String order) {
+    public void cancel() {
         finish();
     }
 
     @JavascriptInterface
     public void fail() {
+        Log.d("Seastar", "支付失败");
         getIntent().putExtra("order", "");
         getIntent().putExtra("success", false);
         setResult(Config.RESULT_CODE_PAYPAL, getIntent());
