@@ -163,7 +163,7 @@ public class AccountListActivity extends BaseActivity implements View.OnClickLis
             text.setText(getItem(position).getUsername());
 
             ImageView deleteImage = (ImageView)convertView.findViewById(R.id.spinner_delete_image);
-            deleteImage.setImageResource(R.drawable.cancel);
+            deleteImage.setImageResource(R.drawable.delete);
             deleteImage.setVisibility(hide ? View.INVISIBLE : View.VISIBLE);
             deleteImage.setOnClickListener(new View.OnClickListener() {
                 @Override
